@@ -1,6 +1,6 @@
 package ca.t.demo
 
-object Solution0021v1 {
+object Solution0021 {
   def mergeTwoLists(list1: ListNode, list2: ListNode): ListNode = {
     (list1, list2) match {
       case (null, _) => list2
@@ -11,9 +11,10 @@ object Solution0021v1 {
       }
     }
   }
+
+  class ListNode(_x: Int = 0, _next: ListNode = null) {
+    var next: ListNode = _next
+    var x: Int = _x
+  }
 }
 
-class ListNode(_x: Int = 0, _next: ListNode = null) {
-  var next: ListNode = _next
-  var x: Int = _x
-}
