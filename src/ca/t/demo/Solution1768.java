@@ -1,4 +1,4 @@
-package ca.t.demo.java;
+package ca.t.demo;
 
 /**
  * You are given two strings word1 and word2. Merge the strings by adding letters in alternating

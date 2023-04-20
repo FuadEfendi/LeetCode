@@ -1,4 +1,4 @@
-package ca.t.demo.java;
+package ca.t.demo;
 
 class Solution0067v1 {
   public String addBinary(String a, String b) {

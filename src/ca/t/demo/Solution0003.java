@@ -1,4 +1,4 @@
-package ca.t.demo.java;
+package ca.t.demo;
 
 import java.util.Arrays;
 

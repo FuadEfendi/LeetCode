@@ -1,4 +1,4 @@
-package ca.t.demo.java;
+package ca.t.demo;
 
 class Solution0013v1 {
   public int romanToInt(String s) {

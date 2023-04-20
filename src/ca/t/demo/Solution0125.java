@@ -1,4 +1,4 @@
-package ca.t.demo.java;
+package ca.t.demo;
 
 class Solution0125v1 {
   public boolean isPalindrome(String s) {

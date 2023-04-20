@@ -1,4 +1,4 @@
-package ca.t.demo.java;
+package ca.t.demo;
 
 class Solution0014v1 {
   public String longestCommonPrefix(String[] strs) {
