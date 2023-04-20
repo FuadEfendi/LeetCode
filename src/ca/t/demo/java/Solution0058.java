@@ -1,4 +1,4 @@
-package ca.t.demo;
+package ca.t.demo.java;
 
 class Solution0058v1 {
   public int lengthOfLastWord(String s) {

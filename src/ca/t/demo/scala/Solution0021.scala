@@ -1,4 +1,4 @@
-package ca.t.demo
+package ca.t.demo.scala
 
 object Solution0021v1 {
   def mergeTwoLists(list1: ListNode, list2: ListNode): ListNode = {

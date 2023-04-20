@@ -1,4 +1,4 @@
-package ca.t.demo;
+package ca.t.demo.java;
 
 /**
  * 5. Longest Palindromic Substring

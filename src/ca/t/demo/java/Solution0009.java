@@ -1,4 +1,4 @@
-package ca.t.demo;
+package ca.t.demo.java;
 
 /** Given an integer x, return true if x is a palindrome, and false otherwise. */
 class Solution0009v1 {

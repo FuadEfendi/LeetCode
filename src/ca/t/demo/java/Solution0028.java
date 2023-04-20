@@ -1,4 +1,4 @@
-package ca.t.demo;
+package ca.t.demo.java;
 
 class Solution0028v1 {
   public int strStr(String haystack, String needle) {
