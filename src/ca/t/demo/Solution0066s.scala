@@ -1,7 +1,7 @@
 package ca.t.demo
 
 object Solution0066s {
-  
+
   // Scala approach
   def plusOne7(digits: Array[Int]): Array[Int] = {
     val (ret, inc) = digits.foldRight((Array.empty[Int], true)) {
