@@ -20,5 +20,5 @@ object Solution0070s {
   def climbStairs2(n: Int): Int = {
     if (n < 0) 0 else if (n == 0) 1 else climbStairs(n - 1) + climbStairs(n - 2)
   }
-  
+
 }
