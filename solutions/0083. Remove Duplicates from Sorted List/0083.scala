@@ -3,38 +3,67 @@ import scala.annotation.tailrec
 object Solution0083s {
 
   def main(args: Array[String]): Unit = {
-    val seq = (1 to 10000).map(_ => scala.util.Random.nextInt(20000)).sorted
+    val seq = (1 to 100000).map(_ => scala.util.Random.nextInt(20000)).sorted
+
+    var offset: Long = measureExecutionTime(null, null, 0, {
+      val node: ListNode = generateList(seq)
+    })
+    offset = measureExecutionTime(null, null, 0, {
+      val node: ListNode = generateList(seq)
+    })
+    offset = measureExecutionTime(null, null, 0, {
+      val node: ListNode = generateList(seq)
+    })
+    offset = measureExecutionTime(null, null, 0, {
+      val node: ListNode = generateList(seq)
+    })
+    offset = measureExecutionTime(null, null, 0, {
+      val node: ListNode = generateList(seq)
+    })
+
+    measureExecutionTime("aaabramov", "Apr 10, 2023", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+    measureExecutionTime("Svetozorg", "Jan 24, 2023", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+    measureExecutionTime("Andrea_Detommaso", "Dec 07, 2022", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+    measureExecutionTime("ruslanlbogun", "Nov 10, 2021", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+    measureExecutionTime("WayneAK", "Feb 11, 2022", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+    measureExecutionTime("maxmtmn", "Aug 01, 2022", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+    measureExecutionTime("l33tcoder31415", "Jun 04, 2022", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+    measureExecutionTime("GeneralLee200", "Apr 28, 2022", offset, {
+      val node: ListNode = generateList(seq)
+      Solution1.deleteDuplicates(node)
+    })
+
+  }
+
+  def generateList(seq: Seq[Int]): ListNode = {
     val node: ListNode = new ListNode();
     seq.foldLeft(node)((n, i) => {
       val next = new ListNode(i)
       n.next = next
       next
     })
-    measureExecutionTime("aaabramov", "Apr 10, 2023", {
-      Solution1.deleteDuplicates(node)
-    })
-    measureExecutionTime("Svetozorg", "Jan 24, 2023", {
-      Solution1.deleteDuplicates(node)
-    })
-    measureExecutionTime("Andrea_Detommaso", "Dec 07, 2022", {
-      Solution1.deleteDuplicates(node)
-    })
-    measureExecutionTime("ruslanlbogun", "Nov 10, 2021", {
-      Solution1.deleteDuplicates(node)
-    })
-    measureExecutionTime("WayneAK", "Feb 11, 2022", {
-      Solution1.deleteDuplicates(node)
-    })
-    measureExecutionTime("maxmtmn", "Aug 01, 2022", {
-      Solution1.deleteDuplicates(node)
-    })
-    measureExecutionTime("l33tcoder31415", "Jun 04, 2022", {
-      Solution1.deleteDuplicates(node)
-    })
-    measureExecutionTime("GeneralLee200", "Apr 28, 2022", {
-      Solution1.deleteDuplicates(node)
-    })
-
+    node
   }
 
   /**
@@ -224,7 +253,7 @@ object Solution0083s {
    * Executes some code block and prints to stdout the time taken to execute the block. This is
    * available in Scala only and is used primarily for interactive testing and debugging.
    */
-  def measureExecutionTime[T](author: String = "unknown", date: String, f: => Unit): Unit = {
+  def measureExecutionTime[T](author: String, date: String, startTime: Long, f: => Unit): Long = {
 
     /**
      * JIT compiles bytecode to native machine code to optimize efficiency.
@@ -232,13 +261,14 @@ object Solution0083s {
      * The hardware executes the native code of repeated method calls.
      */
     1 to 10000 foreach { _ => f }
-
     val start = System.nanoTime()
-    1 to 1000 foreach { _ => f }
+    1 to 10000 foreach { _ => f }
     val end = System.nanoTime()
-
-    println(s"Average time taken: ${(end - start) / 1000} nanoseconds, submitted by $author on $date")
-
+    val ret = ((end - start) / 10000) - startTime
+    if (author == null)
+      println(s"Average time taken to generate initial list: $ret nanoseconds")
+    else println(s"Average time taken: $ret nanoseconds, submitted by $author on $date")
+    ret
   }
 }
 
